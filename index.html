@@ -26,8 +26,8 @@
 <body>
     <div class="container">
         <div class="col-lg-4 col-lg-offset-4">
-            <h1 class="text-center">Runge-Kutta Methods</h1>
-            <p class="text-center">Enter the function in the terms of X and Y:</p>
+            <h1 class="text-center">Métodos de Runge-Kutta</h1>
+            <p class="text-center">Ingrese la función en los términos de X y Y::</p>
 
             <p class="repetido"></p>
             <p class="help"></p>
@@ -43,8 +43,12 @@
                             <input type="text" value="0.5" id="H" class="form-control" />
                         </th>
                         <th>
-                            <p class="text-center">X:</p>
-                            <input type="text" value="1" id="X" class="form-control" />
+                            <p class="text-center">X min:</p>
+                            <input type="text" value="1" id="Xmin" class="form-control" />
+                        </th>
+                        <th>
+                            <p class="text-center">X max:</p>
+                            <input type="text" value="2" id="Xmax" class="form-control" />
                         </th>
                         <th>
                             <p class="text-center">f(X):</p>
@@ -61,7 +65,7 @@
                     <button type="button" class="euler btn btn-default">Euler</button>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="button" class="mejorado btn btn-default">Euler improved</button>
+                    <button type="button" class="mejorado btn btn-default">Euler mejorado</button>
                 </div>
                 <div class="btn-group" role="group">
                     <button type="button" class="ralston btn btn-default">Ralston</button>
@@ -69,9 +73,9 @@
             </div>
         </div>
 
-        
+
         <div class="col-lg-6 col-lg-offset-3">
-                <br>
+            <br>
             <table class="table table-bordered">
                 <thead>
                     <tr>
