@@ -37,7 +37,7 @@ function euler(x, y, h) {
 
     var i = 0;
 
-    while (x < 2) {
+    while (x <= 2) {
 
         i += 1;
 
@@ -61,7 +61,7 @@ function euler_mejorado(x, y, h) {
     var i = 0;
 
     // Este es Euler Mejorado con 1/2; Heuhn
-    while (x < 2) {
+    while (x <= 2) {
         i++;
         fun = parser.eval('f(' + x + ',' + y + ')');
 
@@ -83,7 +83,7 @@ function ralston(x, y, h) {
     var i = 0;
 
     // Este es Euler Mejorado; Ralston
-    while (x < 2) {
+    while (x <= 2) {
         i++;
         //Este es el k1
         yp1 = parser.eval('f(' + x + ',' + y + ')');
