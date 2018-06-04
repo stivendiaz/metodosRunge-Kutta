@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://unpkg.com/mathjs@4.4.2/dist/math.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h1 class="text-center">Runge-Kutta Methods</h1>
+            <p class="text-center">Enter the function in the terms of X and Y:</p>
+
+            <p class="repetido"></p>
+            <p class="help"></p>
+            <input type="text" id="input" value="((1 + x) / (1 + y))" class="form-control" />
+            <table class="table">
+                <thead>
+
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                        <th>
+                            <p class="text-center">H:</p>
+                            <input type="text" value="0.5" id="H" class="form-control" />
+                        </th>
+                        <th>
+                            <p class="text-center">X:</p>
+                            <input type="text" value="1" id="X" class="form-control" />
+                        </th>
+                        <th>
+                            <p class="text-center">f(X):</p>
+                            <input type="text" value="2" id="Y" class="form-control" />
+                        </th>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" class="euler btn btn-default">Euler</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="mejorado btn btn-default">Euler improved</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="ralston btn btn-default">Ralston</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-lg-6 col-lg-offset-3">
+                <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Yn+1</th>
+                        <th>Yn</th>
+                        <th>X</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody" class="tbody">
+
+                </tbody>
+            </table>
+
+            <script src="main.js"></script>
+        </div>
+</body>
+
+</html>
