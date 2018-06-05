@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <!-- Mathjs -->
     <script src="https://unpkg.com/mathjs@4.4.2/dist/math.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
@@ -16,22 +16,59 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  
+    <!-- Expresiones con formato Mathjs y latex -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js"></script>
+  
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    
     <link href="style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Métodos Númericos</title>
 </head>
 
 <body>
-    <div class="container">
+        
+
+<div class="container">
         <div class="col-lg-4 col-lg-offset-4">
-            <h1 class="text-center">Métodos de Runge-Kutta</h1>
+            <h1 class="text-center">Métodos</h1>
             <p class="text-center">Ingrese la función en los términos de X y Y::</p>
 
             <p class="repetido"></p>
             <p class="help"></p>
-            <input type="text" id="input" value="((1 + x) / (1 + y))" class="form-control" />
+            <input type="text" id="input" value="Función" class="form-control" />
+            <div id="pretty">$$$$</div>
+            <script>
+                    var expr = document.getElementById('input'),
+                      pretty = document.getElementById('pretty'), 
+                      parenthesis = 'keep',
+                      implicit = 'hide';// que es esto mk
+                      
+                
+                  pretty.innerHTML = '$$' + math.parse(expr.value).toTex({parenthesis: parenthesis}) + '$$';
+                           
+                  expr.oninput = function () {
+                    var node = null;
+                
+                    try {
+                      // parse the expression
+                      node = math.parse(expr.value);
+                                    }
+                    catch (err) {
+                    }
+                
+                    try {
+                      // export the expression to LaTeX
+                        var latex = node ? node.toTex({parenthesis: parenthesis, implicit: implicit}) : '';
+                      
+                
+                      // display and re-render the expression
+                      var elem = MathJax.Hub.getAllJax('pretty')[0];
+                      MathJax.Hub.Queue(['Text', elem, latex]);
+                    }
+                    catch (err) {}
+                  };
+                </script>
             <table class="table">
                 <thead>
 
@@ -89,7 +126,7 @@
                 </tbody>
             </table>
 
-            <script src="main.js"></script>
+           <script src="main.js"></script>
         </div>
 </body>
 
