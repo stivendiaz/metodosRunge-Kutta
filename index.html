@@ -18,10 +18,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
     <!-- Expresiones con formato Mathjs y latex -->
-      <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
-                <script>
+    <link href="style.css" rel="stylesheet">
+    <title>Métodos Númericos</title>
+</head>
+
+<body>
+        
+
+<div class="container">
+        <div class="col-lg-4 col-lg-offset-4">
+            <h1 class="text-center">Métodos</h1>
+            <p class="text-center">Ingrese la función en los términos de X y Y::</p>
+
+            <p class="repetido"></p>
+            <p class="help"></p>
+            <input type="text" id="input" value="Función" class="form-control" />
+            <div id="pretty">$$$$</div>
+            <script>
                     var expr = document.getElementById('input'),
                       pretty = document.getElementById('pretty'), 
                       parenthesis = 'keep',
@@ -52,26 +68,6 @@
                     catch (err) {}
                   };
                 </script>
-      
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
-    <link href="style.css" rel="stylesheet">
-    <title>Métodos Númericos</title>
-</head>
-
-<body>
-        
-
-<div class="container">
-        <div class="col-lg-4 col-lg-offset-4">
-            <h1 class="text-center">Métodos</h1>
-            <p class="text-center">Ingrese la función en los términos de X y Y::</p>
-
-            <p class="repetido"></p>
-            <p class="help"></p>
-            <input type="text" id="input" value="Función" class="form-control" />
-            <div id="pretty">$$$$</div>
-
             <table class="table">
                 <thead>
 
